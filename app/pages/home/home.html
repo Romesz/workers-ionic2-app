@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <button menuToggle>
+      <ion-icon name='menu'></ion-icon>
+    </button>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="home">
+
+  <ion-list>
+    <ion-list-header>
+      Workers
+    </ion-list-header>
+    <div *ngFor="let w of workers; let i=index">
+      <a ion-item (click)="openModal({charNum: i})">
+         {{i + 1}}. {{w.name}}
+      </a>
+    </div>
+  </ion-list>
+</ion-content>

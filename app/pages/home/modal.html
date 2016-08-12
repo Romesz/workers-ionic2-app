@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Description
+    </ion-title>
+    <ion-buttons start>
+      <button (click)="dismiss()">
+        <span primary showWhen="ios">Cancel</span>
+        <ion-icon name="md-close" showWhen="android,windows,core"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+      <ion-item>
+        <h2>{{worker.name}}</h2>
+      </ion-item>
+
+      <ion-item *ngFor="let item of worker['items']">
+        <ion-label primary>{{item.title}}</ion-label>
+        <ion-note item-right>
+          <ion-input [ngModel]="item.note" (ngModelChange)="changeValue($event, item.title)"></ion-input>
+        </ion-note>
+      </ion-item>
+  </ion-list>
+</ion-content>
