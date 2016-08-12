@@ -1,10 +1,10 @@
 import { Component } from "@angular/core";
-import { NavController } from "ionic-angular";
+import { Modal, NavController } from "ionic-angular";
 
 import {WorkerNumConfig, ItemConfig, WorkerConfig} from "../../Interfaces";
 import {WorkersClass} from "../../WorkerService";
 
-import {HomePage} from "../home/home";
+import {HomePage, ModalsContentPage} from "../home/home";
 
 @Component({
   templateUrl: "build/pages/addworker/addworker.html",
@@ -36,6 +36,8 @@ export class AddWorkerPage {
     this.workersClass.Set(this.workers);
 
     this.nav.push(HomePage);
+    let modal = Modal.create(ModalsContentPage, {charNum: this.workersClass.Get().length - 1});
+    this.nav.present(modal);
   }
 
 }

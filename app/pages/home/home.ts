@@ -31,7 +31,7 @@ export class HomePage {
   templateUrl: "./build/pages/home/modal.html",
   providers: [WorkersClass]
 })
-class ModalsContentPage {
+export class ModalsContentPage {
   worker: WorkerConfig;
   workers: Array<WorkerConfig>;
 
